@@ -1,7 +1,7 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.getElementById('nav-menu'),
-navToggle = document.getElementById('nav-toggle'),
-navClose = document.getElementById('nav-close');
+const   navMenu = document.getElementById('nav-menu'),
+        navToggle = document.getElementById('nav-toggle'),
+        navClose = document.getElementById('nav-close');
 
 
 
@@ -29,7 +29,7 @@ function linkAction() {
  	// When nav__link is clickec, remove the show-menu class
  	navMenu.classList.remove('show-menu');
  }
- navLink.forEach(n => n.addEventListener('click', linkAction));
+ navLink.forEach(i => i.addEventListener('click', linkAction));
 
 
  /*==================== ACCORDION SKILLS ====================*/
