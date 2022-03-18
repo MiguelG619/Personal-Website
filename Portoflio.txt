@@ -13,3 +13,6 @@ Android studio
 BPMN 2.0
 IS skills ishikawa diagram etc (reference isande 
 Excel (pivot table, etc
+
+services option see more can be added in the projects to see what I did in that particular project besdies demo
+also add github link
