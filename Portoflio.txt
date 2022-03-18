@@ -16,3 +16,5 @@ Excel (pivot table, etc
 
 services option see more can be added in the projects to see what I did in that particular project besdies demo
 also add github link
+
+can upgrade buttons animation
