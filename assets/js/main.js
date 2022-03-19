@@ -86,69 +86,97 @@ modalBtns.forEach((modalBtn, i) => {
 });
 
 modalCloses.forEach((modalClose) => {
-    modalClose.addEventListener('click', () => {
+    modalClose.addEventListener("click", () => {
         modalViews.forEach((modalView) => {
-            modalView.classList.remove('active-modal');
+            modalView.classList.remove("active-modal");
         });
     });
 });
 
 /*==================== PORTFOLIO SWIPER  ====================*/
-let swiper = new Swiper('.portfolio__container', {
-      cssMode: true,
-      loop:true,
+let swiper = new Swiper(".portfolio__container", {
+    cssMode: true,
+    loop: true,
 
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
         clickable: true,
-      },
-    });
-
+    },
+});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]');
+const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
     const scrollY = window.pageYOffset;
 
-    sections.forEach(current => {
+    sections.forEach((current) => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id');
+        sectionId = current.getAttribute("id");
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) 
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
-        else 
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
-    });     
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
+            document
+                .querySelector(".nav__menu a[href*=" + sectionId + "]")
+                .classList.add("active-link");
+        else
+            document
+                .querySelector(".nav__menu a[href*=" + sectionId + "]")
+                .classList.remove("active-link");
+    });
 }
 
-window.addEventListener('scroll', scrollActive);
+window.addEventListener("scroll", scrollActive);
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
-    const nav = document.getElementById('header');
+    const nav = document.getElementById("header");
 
     // Add the scroll-header class to the header tag when the scroll is greater than 80 viewport height
-    if (this.scrollY >= 80) 
-        nav.classList.add('scroll-header');
-    else
-        nav.classList.remove('scroll-header');
+    if (this.scrollY >= 80) nav.classList.add("scroll-header");
+    else nav.classList.remove("scroll-header");
 }
-window.addEventListener('scroll', scrollHeader);
+window.addEventListener("scroll", scrollHeader);
 /*==================== SHOW SCROLL UP ====================*/
 function scrollUp() {
-  const scrollUp = document.getElementById('scroll-up');
+    const scrollUp = document.getElementById("scroll-up");
 
-  // Add the show-scroll class when the scroll is higher than 560 viewport height
-  if (this.scrollY >= 560) 
-    scrollUp.classList.add('show-scroll');
-else 
-    scrollUp.classList.remove('show-scroll');
+    // Add the show-scroll class when the scroll is higher than 560 viewport height
+    if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+    else scrollUp.classList.remove("show-scroll");
 }
-window.addEventListener('scroll', scrollUp);
+window.addEventListener("scroll", scrollUp);
+
 /*==================== DARK LIGHT THEME ====================*/
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'uil-sun';
+
+// Previously selected theme
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
+
+// Obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
+
+// Validate if the user previously selected a theme
+if (selectedTheme) {
+    // If the validation is fulfilled, verify if the theme is in dark mode
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+    themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme);
+}  
+
+// Activate or deactivatre the theme by pressing the button
+themeButton.addEventListener('click', () => {
+    // Add or remove the dark icon and theme
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+    // Save the theme and the current icon that the user chose
+    localStorage.setItem('selected-theme', getCurrentTheme());
+        localStorage.setItem('selected-icon', getCurrentIcon());
+});
