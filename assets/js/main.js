@@ -180,3 +180,8 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme());
         localStorage.setItem('selected-icon', getCurrentIcon());
 });
+
+/*==================== Contact Me Form ====================*/
+function submitForm() {
+  window.location.reload();
+}

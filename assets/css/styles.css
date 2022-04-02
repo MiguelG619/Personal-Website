@@ -25,7 +25,6 @@
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
-
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
     --h2-font-size: 1.25rem;
@@ -38,7 +37,7 @@
     --font-medium: 500;
     --font-semi-bold: 600;
 
-    /*========== Margenes Bottom ==========*/
+    /*========== Margin Bottom ==========*/
     --mb-0-25: .25rem;
     --mb-0-5: .5rem;
     --mb-0-75: .75rem;
@@ -543,11 +542,63 @@ img {
 }
 
 .skills__figma {
-  width: 85%;
+  width: 90%;
+}
+
+.skills__lucidchart {
+  width: 90%;
 }
 
 .skills__photoshop {
   width: 65%;
+}
+
+.skills__photoshop {
+  width: 65%;
+}
+
+.skills__java {
+  width: 90%;
+}
+
+.skills__wordpress {
+  width: 88%;
+}
+
+.skills__c {
+  width: 85%;
+}
+
+.skills__kotlin {
+  width: 88%;
+}
+
+.skills__windows {
+  width: 90%;
+}
+
+.skills__linux {
+  width: 80%;
+}
+
+.skills__github {
+  width: 90%;
+}
+
+.skills__git {
+  width: 85%;
+}
+
+.skills__excel {
+  width: 82%;
+}
+
+.skills__tableau {
+  width: 83%;
+}
+
+.skills__powerbi {
+  width: 81%;
 }
 
 .skills__close .skills__list {
@@ -600,7 +651,7 @@ img {
 }
 
 .qualification__title {
-  font-size: var(--small-font-size);
+  font-size: var(--medium-font-size);
   font-weight: var(--font-medium);
 }
 
@@ -770,12 +821,21 @@ img {
   margin-bottom: var(--mb-0-5);
 }
 
+.portfolio__subtitle {
+  font-size: var(--smaller-font-size);
+}
+
 .portfolio__description {
   margin-bottom: var(--mb-0-75);
 }
 
 .portfolio__button:hover .button__icon {
   transform:  translateX(.25rem);
+}
+
+.portfolio__source {
+  background-color: var(--first-color);
+  margin-left: 2px;
 }
 
 .swiper-button-prev::after,
@@ -851,7 +911,7 @@ img {
   display: flex;
   margin-bottom: var(--mb-2);
 }
-
+ 
 .contact__icon {
   font-size: 2rem;
   color: var(--first-color);
